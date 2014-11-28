@@ -14,7 +14,7 @@ $app->register(new Silex\Provider\MonologServiceProvider(), array(
 
 $app->get('/', function() use($app) {
   $app['monolog']->addDebug('logging output.');
-  return __DIR__.'/app/index.html';
+  return readfile(__DIR__.'/app/index.html');
 });
 
 $app->run();
